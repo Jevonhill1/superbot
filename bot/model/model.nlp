@@ -1,0 +1,588 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": false,
+    "modelFileName": "model.nlp"
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "trainByDomain": false,
+          "useStemDict": true
+        },
+        "stemDict": {
+          "covid-19,have,i,if,know,to,want": {
+            "intent": "diagnosis",
+            "domain": "default"
+          },
+          "yes": {
+            "intent": "questionOne",
+            "domain": "default"
+          },
+          "am,i,infected,think": {
+            "intent": "questionTwo",
+            "domain": "default"
+          },
+          "a,book,i,preparty,to,want": {
+            "intent": "booking",
+            "domain": "default"
+          },
+          "open,webview": {
+            "intent": "open.webview",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morning": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "diagnosis": "default",
+          "questionOne": "default",
+          "questionTwo": "default",
+          "booking": "default",
+          "open.webview": "default",
+          "greeting": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "I want to know if I have COVID-19?",
+            "intent": "diagnosis"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes",
+            "intent": "questionOne"
+          },
+          {
+            "domain": "default",
+            "utterance": "I think I am infected.",
+            "intent": "questionTwo"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to book a preparty",
+            "intent": "booking"
+          },
+          {
+            "domain": "default",
+            "utterance": "Open webview",
+            "intent": "open.webview"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hi",
+            "intent": "greeting"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "i": 1,
+              "want": 1,
+              "to": 1,
+              "know": 1,
+              "if": 1,
+              "have": 1,
+              "covid-19": 1,
+              "yes": 1,
+              "think": 1,
+              "am": 1,
+              "infected": 1,
+              "book": 1,
+              "a": 1,
+              "preparty": 1,
+              "open": 1,
+              "webview": 1,
+              "hey": 1,
+              "hello": 1,
+              "good": 1,
+              "afternoon": 1,
+              "morning": 1,
+              "hi": 1
+            },
+            "intents": {
+              "diagnosis": 1,
+              "questionOne": 1,
+              "questionTwo": 1,
+              "booking": 1,
+              "open.webview": 1,
+              "greeting": 1
+            },
+            "intentFeatures": {
+              "diagnosis": [
+                "i",
+                "want",
+                "to",
+                "know",
+                "if",
+                "have",
+                "covid-19"
+              ],
+              "questionOne": [
+                "yes"
+              ],
+              "questionTwo": [
+                "i",
+                "think",
+                "am",
+                "infected"
+              ],
+              "booking": [
+                "i",
+                "want",
+                "to",
+                "book",
+                "a",
+                "preparty"
+              ],
+              "open.webview": [
+                "open",
+                "webview"
+              ],
+              "greeting": [
+                "hey",
+                "hello",
+                "good",
+                "afternoon",
+                "morning",
+                "hi"
+              ]
+            },
+            "featuresToIntent": {
+              "i": [
+                "diagnosis",
+                "questionTwo",
+                "booking"
+              ],
+              "want": [
+                "diagnosis",
+                "booking"
+              ],
+              "to": [
+                "diagnosis",
+                "booking"
+              ],
+              "know": [
+                "diagnosis"
+              ],
+              "if": [
+                "diagnosis"
+              ],
+              "have": [
+                "diagnosis"
+              ],
+              "covid-19": [
+                "diagnosis"
+              ],
+              "yes": [
+                "questionOne"
+              ],
+              "think": [
+                "questionTwo"
+              ],
+              "am": [
+                "questionTwo"
+              ],
+              "infected": [
+                "questionTwo"
+              ],
+              "book": [
+                "booking"
+              ],
+              "a": [
+                "booking"
+              ],
+              "preparty": [
+                "booking"
+              ],
+              "open": [
+                "open.webview"
+              ],
+              "webview": [
+                "open.webview"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "hello": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "morning": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ]
+            },
+            "neuralNetwork": {
+              "features": [
+                "i",
+                "want",
+                "to",
+                "know",
+                "if",
+                "have",
+                "covid-19",
+                "yes",
+                "think",
+                "am",
+                "infected",
+                "book",
+                "a",
+                "preparty",
+                "open",
+                "webview",
+                "hey",
+                "hello",
+                "good",
+                "afternoon",
+                "morning",
+                "hi",
+                "nonefeature"
+              ],
+              "intents": [
+                "diagnosis",
+                "questionOne",
+                "questionTwo",
+                "booking",
+                "open.webview",
+                "greeting",
+                "None"
+              ],
+              "perceptrons": [
+                [
+                  0.8474159836769104,
+                  1.1895208358764648,
+                  1.1895208358764648,
+                  2.295597791671753,
+                  2.295597791671753,
+                  2.295597791671753,
+                  2.295597791671753,
+                  -0.14448629319667816,
+                  -0.3421042859554291,
+                  -0.3421042859554291,
+                  -0.3421042859554291,
+                  -1.1060773134231567,
+                  -1.1060773134231567,
+                  -1.1060773134231567,
+                  -0.06364612281322479,
+                  -0.06364612281322479,
+                  -0.09388313442468643,
+                  -0.0924774706363678,
+                  -0.0886167660355568,
+                  -0.04627939686179161,
+                  -0.04233738034963608,
+                  -0.09116566181182861,
+                  -0.0908597931265831,
+                  0.09112909853111824
+                ],
+                [
+                  -0.5666492581367493,
+                  -0.2568148076534271,
+                  -0.2568148076534271,
+                  -0.09203577041625977,
+                  -0.09203577041625977,
+                  -0.09203577041625977,
+                  -0.09203577041625977,
+                  10.735906600952148,
+                  -0.30983418226242065,
+                  -0.30983418226242065,
+                  -0.30983418226242065,
+                  -0.16477899253368378,
+                  -0.16477899253368378,
+                  -0.16477899253368378,
+                  -0.7353231310844421,
+                  -0.7353231310844421,
+                  -1.4095379114151,
+                  -1.3979105949401855,
+                  -0.9730616211891174,
+                  -0.4885360598564148,
+                  -0.4845256507396698,
+                  -1.3801536560058594,
+                  -1.364853858947754,
+                  1.4502920062498343
+                ],
+                [
+                  2.4909093379974365,
+                  -0.7502312660217285,
+                  -0.7502312660217285,
+                  -0.3204967677593231,
+                  -0.3204967677593231,
+                  -0.3204967677593231,
+                  -0.3204967677593231,
+                  -0.283675879240036,
+                  3.2411420345306396,
+                  3.2411420345306396,
+                  3.2411420345306396,
+                  -0.4297346770763397,
+                  -0.4297346770763397,
+                  -0.4297346770763397,
+                  -0.19841885566711426,
+                  -0.19841885566711426,
+                  -0.2988768219947815,
+                  -0.2938482165336609,
+                  -0.27165690064430237,
+                  -0.14136315882205963,
+                  -0.13029375672340393,
+                  -0.2876911759376526,
+                  -0.28572314977645874,
+                  0.28549712688399964
+                ],
+                [
+                  1.1573729515075684,
+                  1.581122636795044,
+                  1.581122636795044,
+                  -1.1082171201705933,
+                  -1.1082171201705933,
+                  -1.1082171201705933,
+                  -1.1082171201705933,
+                  -0.1114647313952446,
+                  -0.4237488806247711,
+                  -0.4237488806247711,
+                  -0.4237488806247711,
+                  2.6893393993377686,
+                  2.6893393993377686,
+                  2.6893393993377686,
+                  -0.11612003296613693,
+                  -0.11612003296613693,
+                  -0.14376385509967804,
+                  -0.1388624757528305,
+                  -0.1671629101037979,
+                  -0.08753345906734467,
+                  -0.07962948083877563,
+                  -0.1295178383588791,
+                  -0.12580373883247375,
+                  0.11233215304901484
+                ],
+                [
+                  -0.3095617890357971,
+                  -0.14766962826251984,
+                  -0.14766962826251984,
+                  -0.07802264392375946,
+                  -0.07802264392375946,
+                  -0.07802264392375946,
+                  -0.07802264392375946,
+                  -0.7056992053985596,
+                  -0.1618920862674713,
+                  -0.1618920862674713,
+                  -0.1618920862674713,
+                  -0.06964700669050217,
+                  -0.06964700669050217,
+                  -0.06964700669050217,
+                  5.885193347930908,
+                  5.885193347930908,
+                  -0.7244548797607422,
+                  -0.7194821238517761,
+                  -0.5655980110168457,
+                  -0.29127243161201477,
+                  -0.27432554960250854,
+                  -0.7145078778266907,
+                  -0.7106429934501648,
+                  0.7174060259985792
+                ],
+                [
+                  -2.0348970890045166,
+                  -0.9313742518424988,
+                  -0.9313742518424988,
+                  -0.44821837544441223,
+                  -0.44821837544441223,
+                  -0.44821837544441223,
+                  -0.44821837544441223,
+                  -5.132134914398193,
+                  -1.103522777557373,
+                  -1.103522777557373,
+                  -1.103522777557373,
+                  -0.4831559360027313,
+                  -0.4831559360027313,
+                  -0.4831559360027313,
+                  -2.663227081298828,
+                  -2.663227081298828,
+                  7.0088419914245605,
+                  7.012712001800537,
+                  4.758768081665039,
+                  2.3833513259887695,
+                  2.3754172325134277,
+                  6.963570594787598,
+                  -5.184096813201904,
+                  5.362265828943621
+                ],
+                [
+                  -0.5579481720924377,
+                  -0.254413366317749,
+                  -0.254413366317749,
+                  -0.12036077678203583,
+                  -0.12036077678203583,
+                  -0.12036077678203583,
+                  -0.12036077678203583,
+                  -1.4081836938858032,
+                  -0.3035348057746887,
+                  -0.3035348057746887,
+                  -0.3035348057746887,
+                  -0.1340525895357132,
+                  -0.1340525895357132,
+                  -0.1340525895357132,
+                  -0.7322055101394653,
+                  -0.7322055101394653,
+                  -1.3907479047775269,
+                  -1.3778319358825684,
+                  -0.9688524603843689,
+                  -0.4868083894252777,
+                  -0.48204395174980164,
+                  -1.357094168663025,
+                  10.716076850891113,
+                  1.4694658478682592
+                ]
+              ],
+              "perceptronSettings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "I want to know if I have COVID-19?"
+      ],
+      [
+        "en",
+        "Yes"
+      ],
+      [
+        "en",
+        "I think I am infected."
+      ],
+      [
+        "en",
+        "I want to book a preparty"
+      ],
+      [
+        "en",
+        "Open webview"
+      ],
+      [
+        "en",
+        "Hey"
+      ],
+      [
+        "en",
+        "Hello"
+      ],
+      [
+        "en",
+        "Good afternoon"
+      ],
+      [
+        "en",
+        "Good morning"
+      ],
+      [
+        "en",
+        "Hi"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

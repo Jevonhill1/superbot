@@ -1,0 +1,11 @@
+@Intent('greeting', [
+    'Hey',
+    'Hello',
+    'Good afternoon',
+    'Good morning',
+    'Hi'
+])
+hello() {
+    > If you are wondering if you may have COVID-19, you came to the right place to ask questions.
+    > Right now, many hospitals are overburdened with negative inquiries.
+}

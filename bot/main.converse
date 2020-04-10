@@ -1,0 +1,51 @@
+$name = ''
+
+@Event('start')
+start() {
+    > Hello. I am your online questionnaire to find out if you are at risk for COVID-19. What is your name?
+    Prompt()
+    $name = :text
+    > Welcome { $name }
+}
+
+@Intent('diagnosis', [
+    'I want to know if I have COVID-19?'
+]) 
+diagnosis() {
+   > Have you recently traveled to an area with known local spread of COVID-19?
+}
+
+@Intent('questionOne', [
+    'Yes'
+]) 
+questionOne() {
+   >  Have you come into close contact (within 6 feet) with someone who has a laboratory confirmed COVID – 19 diagnosis in the past 14 days?
+}
+
+@Intent('questionTwo', [
+    'I think I am infected.'
+])
+questionTwo() {
+    > Do you have a fever (greater than 100.4 F or 38.0 C) OR symptoms of lower respiratory illness such as cough, shortness of breath, difficulty breathing or sore throat?
+    > Are you a first responder, healthcare worker, or employee or attendee of a child or adult care facility?
+}
+
+@Intent('booking', [
+    'I want to book a preparty'
+])
+booking() {
+    > Ok, book a preparty
+}
+
+@Intent('open.webview', [
+    'Open webview'
+])
+openWebview() {
+    @Format('webview', {
+        url: '/webview/test.html',
+        button: 'View',
+        fbHeight: 'tall',
+        height: 100
+    })
+    > Ok, here is the webview
+}

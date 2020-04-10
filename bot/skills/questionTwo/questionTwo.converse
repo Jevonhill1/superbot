@@ -1,0 +1,4 @@
+@Intent(/test/i)
+test() {
+    > QuestionTwo skill works !
+}

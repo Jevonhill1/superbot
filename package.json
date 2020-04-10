@@ -1,0 +1,20 @@
+{
+  "name": "my-chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server/app",
+    "dev": "nodemon server/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "newbot": "^0.7.0",
+    "newbot-express": "^0.4.0",
+    "newbot-formats": "^1.7.1"
+  }
+}

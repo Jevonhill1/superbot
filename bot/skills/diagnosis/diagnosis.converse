@@ -1,0 +1,4 @@
+@Intent(/test/i)
+test() {
+    > Diagnosis skill works !
+}
